@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 const reviews = [
   {
@@ -28,35 +29,38 @@ const Reviews = () => {
     <section id="reviews" className="section-padding bg-secondary">
       <div className="container-wide">
         {/* Rating */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-5 h-5 fill-gold text-gold"
-              />
-            ))}
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 fill-gold text-gold"
+                />
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground tracking-wide uppercase">
+              Loved by our community
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground tracking-wide uppercase">
-            Loved by our community
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((review, index) => (
-            <div
-              key={index}
-              className={`bg-background rounded-lg p-8 shadow-soft hover:shadow-warm transition-shadow duration-500 ${
-                index === 0 ? "lg:col-span-2" : ""
-              }`}
-            >
-              <Quote className="w-8 h-8 text-accent/30 mb-4" />
-              <blockquote className="text-lg md:text-xl font-serif text-foreground leading-relaxed mb-6">
-                "{review.text}"
-              </blockquote>
-              <p className="text-sm text-muted-foreground">— {review.author}</p>
-            </div>
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <div
+                className={`bg-background rounded-lg p-8 shadow-soft hover:shadow-warm transition-shadow duration-500 h-full ${
+                  index === 0 ? "lg:col-span-2" : ""
+                }`}
+              >
+                <Quote className="w-8 h-8 text-accent/30 mb-4" />
+                <blockquote className="text-lg md:text-xl font-serif text-foreground leading-relaxed mb-6">
+                  "{review.text}"
+                </blockquote>
+                <p className="text-sm text-muted-foreground">— {review.author}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
