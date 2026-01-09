@@ -84,25 +84,25 @@ const Header = () => {
           isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center justify-center h-full gap-8 pt-16">
           <a
             href="#experience"
             onClick={() => setIsMenuOpen(false)}
-            className="text-2xl font-serif text-foreground"
+            className="text-2xl font-serif text-foreground hover:text-primary transition-colors"
           >
             Experience
           </a>
           <a
             href="#menu"
             onClick={() => setIsMenuOpen(false)}
-            className="text-2xl font-serif text-foreground"
+            className="text-2xl font-serif text-foreground hover:text-primary transition-colors"
           >
             Menu
           </a>
           <a
             href="#visit"
             onClick={() => setIsMenuOpen(false)}
-            className="mt-4 px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg"
+            className="mt-4 px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg hover:bg-primary/90 transition-colors"
           >
             Visit Us
           </a>
