@@ -44,7 +44,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-up-delay-3">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-fade-up-delay-3">
         <a
           href="#reviews"
           className="flex flex-col items-center gap-2 text-background/60 hover:text-background/80 transition-colors"
